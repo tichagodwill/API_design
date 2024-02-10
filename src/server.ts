@@ -17,7 +17,9 @@ const app = express();
 //     res.status(200)
 //     res.json({message: 'hello from server'})
 // })
-
+app.get('/', (req, res, next)=>{
+    res.json({message: "Hello"})
+})
 app.use('/api', protect, router)
 app.post("/user", createNewUser);
 app.post("/signin", signin);
